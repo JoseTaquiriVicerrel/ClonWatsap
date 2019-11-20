@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PhoneLoginactivity">
+    <EditText
+        android:id="@+id/phone_nnumber_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/inputs"
+        android:padding="8dp"
+        android:hint="Escribe el n° de Telefono"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/phone"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        ></EditText>
+    <EditText
+        android:id="@+id/Verification_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="4dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@drawable/inputs"
+        android:layout_below="@+id/phone_nnumber_input"
+        android:padding="5dp"
+        android:hint="Escribe el codigo de verificatio"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/password"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        ></EditText>
+    <Button
+        android:id="@+id/sen_ver_code_buuton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar codigo de verficacion"
+        android:textAllCaps="false"
+        android:layout_below="@+id/Verification_input"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button"
+        android:textColor="@android:color/background_light"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+
+
+        ></Button>
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificar"
+        android:textAllCaps="false"
+        android:layout_below="@+id/sen_ver_code_buuton"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/button"
+        android:textColor="@android:color/background_light"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        ></Button>
+</RelativeLayout>

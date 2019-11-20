@@ -174,7 +174,7 @@ public class GroupChatActivity extends AppCompatActivity {
             String ChatName=(String) ((DataSnapshot)iterator.next()).getValue();
             String ChatTime=(String) ((DataSnapshot)iterator.next()).getValue();
 
-            displayTextMessages.append(ChatName + ":\n" + ChatMessage + "\n" + ChatTime + "      " + ChatDate + "\n\n");
+            displayTextMessages.append(ChatName + ":\n" + ChatMessage + "\n" + ChatTime + "      " + ChatDate + "\n\n\n");
             mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
         }
     }
