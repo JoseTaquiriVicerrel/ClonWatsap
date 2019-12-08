@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if(dataSnapshot.child("name").exists()){
-                    Toast.makeText(MainActivity.this,"Welcome",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Bienvenido",Toast.LENGTH_SHORT).show();
                 }else{
                     SendUserToSettingsActivity();
                 }
@@ -128,14 +128,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(item.getItemId()==R.id.main_options_friends){
-
+            SendUserToFinfriensActivity();
         }
         return true;
     }
 
     private void RequestNewGroup() {
         AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this,R.style.AlertDialog);
-        builder.setTitle("Enter Group Name: ");
+        builder.setTitle("Nombre de Grupo: ");
 
         final EditText groupNameField=new EditText(MainActivity.this);
         groupNameField.setHint("e.g Coding");
@@ -185,4 +185,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(settingsIntent);
         finish();
     }
+
+    private void SendUserToFinfriensActivity() {
+        Intent Buscaamigo=new Intent(MainActivity.this, FindFriends.class);
+        startActivity(Buscaamigo);
+        finish();
+    }
+
 }
