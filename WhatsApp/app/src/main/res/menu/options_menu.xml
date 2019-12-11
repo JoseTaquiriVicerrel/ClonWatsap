@@ -4,24 +4,24 @@
 
     <item
         android:id="@+id/main_options_friends"
-        android:title="Find Friends"
+        android:title="Buscar Amigos"
         app:showAsAction="never">
     </item>
 
     <item
         android:id="@+id/main_create_group_friends"
-        android:title="Create Group"
+        android:title="Crear Grupo"
         app:showAsAction="never">
     </item>
 
     <item
         android:id="@+id/main_settings_options"
-        android:title="Settings"
+        android:title="Ajustes"
         app:showAsAction="never">
     </item>
     <item
         android:id="@+id/main_logout_options"
-        android:title="Logout"
+        android:title="Salir"
         app:showAsAction="never">
     </item>
 </menu>

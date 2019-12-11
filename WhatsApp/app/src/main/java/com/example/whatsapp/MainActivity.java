@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar mTollbar;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
-
+    private String currentUserID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,13 +69,36 @@ public class MainActivity extends AppCompatActivity {
 
         if(currentUser == null){
             SendUserToLoginActivity();
-            Toast.makeText(this,"Login", Toast.LENGTH_SHORT).show();
+
         }else{
+           // updateUserStatus("online");
             VerifyUserExistance();
         }
 
     }
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
 
+        if (currentUser != null)
+        {
+            //updateUserStatus("offline");
+        }
+    }
+
+
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+
+        if (currentUser != null)
+        {
+            //updateUserStatus("offline");
+        }
+    }
     private void VerifyUserExistance() {
         String currentUserID= mAuth.getCurrentUser().getUid();
 
@@ -105,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //return super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.options_menu, menu);
         return true;
     }
@@ -186,10 +209,30 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+
     private void SendUserToFinfriensActivity() {
         Intent Buscaamigo=new Intent(MainActivity.this, FindFriends.class);
         startActivity(Buscaamigo);
         finish();
     }
+    /*
+    private void updateUserStatus(String state)
+    {
+        String saveCurrentTime, saveCurrentDate;
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+        saveCurrentDate = currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
+        saveCurrentTime = currentTime.format(calendar.getTime());
+
+        HashMap<String, Object> onlineStateMap = new HashMap<>();
+        onlineStateMap.put("time", saveCurrentTime);
+        onlineStateMap.put("date", saveCurrentDate);
+        onlineStateMap.put("state", state);
+
+        RootRef.child("Users").child(currentUserID).child("userState").updateChildren(onlineStateMap);
+
+    }*/
 
 }

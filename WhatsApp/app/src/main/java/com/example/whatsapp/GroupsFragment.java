@@ -25,9 +25,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class GroupsFragment extends Fragment {
 
     private View groupFragmentView;
@@ -54,7 +52,7 @@ public class GroupsFragment extends Fragment {
         IntializeFields();
 
 
-
+        RetrieveAndDisplayGroups();
         list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -66,7 +64,7 @@ public class GroupsFragment extends Fragment {
             }
         });
 
-        RetrieveAndDisplayGroups();
+
 
         return groupFragmentView;
     }

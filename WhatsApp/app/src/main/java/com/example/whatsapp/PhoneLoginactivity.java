@@ -49,7 +49,7 @@ public class PhoneLoginactivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Toast.makeText(PhoneLoginactivity.this, "Numero de equeridotelefono r", Toast.LENGTH_SHORT);
+
                 String phoneNumber = inputPhoneNumber.getText().toString();
 
                 if (TextUtils.isEmpty(phoneNumber)) {
